@@ -1,0 +1,15 @@
+GET http://localhost:3000/faculty/all
+Accept: application/json
+auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlhbiIsImVtYWlsIjoiaWFuQGxvZ2xpdGguY29tIiwiaWQiOiI5MzIwNjg2ZC00NDQwLTRlNzEtYTg0OC0xMjNkMDAxNjI3ZjIiLCJpYXQiOjE2Njg1MTE0NjcsImV4cCI6MTY2ODU5Nzg2N30.ZnGnXchT3BoGsPXAMpfJPJdAYsix7uazXKXovQWJ75Y
+
+###
+POST http://localhost:3000/faculty/create
+Content-Type: application/json
+auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlhbiIsImVtYWlsIjoiaWFuQGxvZ2xpdGguY29tIiwiaWQiOiI5MzIwNjg2ZC00NDQwLTRlNzEtYTg0OC0xMjNkMDAxNjI3ZjIiLCJpYXQiOjE2Njg1MTE0NjcsImV4cCI6MTY2ODU5Nzg2N30.ZnGnXchT3BoGsPXAMpfJPJdAYsix7uazXKXovQWJ75Y
+
+{
+  "name": "Mathematik-Informatik",
+  "nameShort": "MI"
+}
+
+###

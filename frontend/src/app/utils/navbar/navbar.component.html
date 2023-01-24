@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="color: white" *ngIf="backend.isLoggedIn">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="navbar-brand" routerLink="/faculty">Faculties</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" routerLink="/building">Buildings</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" routerLink="/main">Rooms</a>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-dark">Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>

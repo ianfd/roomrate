@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <div class="row" style="height: 7vh"></div>
+  <div class="row justify-content-center">
+    <div class="col-5 text-center">
+      <h1 style="color: white">ROOMS</h1>
+    </div>
+  </div>
+  <div class="row" style="height: 4vh"></div>
+  <div class="row justify-content-center">
+    <div class="col-2 text-center">
+      <button class="btn btn-success" (click)="startCreate()">Create new Room</button>
+    </div>
+    <div class="col-1 text-center">
+      <button class="btn btn-dark"><i class="bi bi-arrow-repeat" (click)="reloadReset()"></i></button>
+    </div>
+  </div>
+  <div class="row" style="height: 2vh"></div>
+  <div class="row justify-content-center">
+    <div class="col-xxl-11 text-center primary-overlay-container">
+      <div style="height: 30px"></div>
+      <div class="container-fluid" *ngIf="!loading && !showError">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+            <table class="table table-dark table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Name (extension)</th>
+                <th scope="col">Building</th>
+                <th scope="col">Type</th>
+                <th scope="col">Accessible</th>
+                <th scope="col">Utilization</th>
+                <th scope="col">Capacity</th>
+                <th scope="col">Image medium</th>
+                <th scope="col">Audio medium</th>
+                <th scope="col">Conference system</th>
+                <th scope="col">Construction effort</th>
+                <th scope="col">Technical effort</th>
+                <th scope="col">Usage time</th>
+                <th scope="col">Score</th>
+                <th scope="col"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let room of rooms">
+                <th scope="row">{{room.id}}</th>
+                <td>{{room.name}}</td>
+                <td>{{room.nameExtension ?? "none"}}</td>
+                <td>{{buildings.get(room.buildingId)?.name ?? "error"}}</td>
+                <td>{{room.type}}</td>
+                <td>{{room.accessible}}</td>
+                <td>{{room.utilization}}</td>
+                <td>{{room.capacity}}</td>
+                <td>{{room.imageMedium}}</td>
+                <td>{{room.audioMedium}}</td>
+                <td>{{room.conferenceSystem}}</td>
+                <td>{{room.constructionEffort}}</td>
+                <td>{{room.technicalEffort}}</td>
+                <td>{{room.usageTime}}</td>
+                <td>{{formatNum(room.computedScore)}}</td>
+                <td>
+                  <button class="btn btn-danger" (click)="delete(room.id)">DELETE</button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row" style="height: 25px"></div>
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+            <ngb-pagination
+              [collectionSize]="roomCount"
+              [(page)]="page"
+              [pageSize]="pageSize"
+              (pageChange)="loadRooms()"
+            >
+            </ngb-pagination>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center" *ngIf="showError">
+        <div class="col-8 text-center">
+          <p style="font-size: large; color: red">{{errorMessage}}</p>
+        </div>
+      </div>
+      <div class="row justify-content-center" *ngIf="loading">
+        <div class="col-8 text-center">
+          <app-spinner></app-spinner>
+        </div>
+      </div>
+      <div style="height: 15px"></div>
+    </div>
+  </div>
+</div>

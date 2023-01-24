@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+
+$primary-color: #F4931C;
+$secondary-color: #f5a041;
+$background-color: #000a12;
+
+$primary-overlay-bg: #1f1f1f;
+$secondary-overlay-bg: #2c2c2c;
+$tertiary-overlay-bg: #4e4e4e;
+$quartary-overlay-bg: #606060;
+
+$offcanvas-bg-color: $background-color;
+$offcanvas-horizontal-width: 700px;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  color: white;
+  background: $background-color;
+}
+
+.input-dark-exmpl, .input-dark-exmpl:focus {
+  background: transparent;
+}
+
+.input-dark-exmpl {
+  border: 2px solid #4a4a4a;
+}
+
+.c-link {
+  color: $primary-color;
+  font-style: normal;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.c-link:hover {
+  color: $secondary-color;
+  font-style: normal;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.light-link {
+  color: black;
+  font-style: normal;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.light-link:hover {
+  color: #a3a3a3;
+  font-style: normal;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.primary-overlay-container {
+  background-color: $primary-overlay-bg;
+  border-radius: 10px;
+  color: white;
+}
+
+.secondary-overlay-container {
+  background-color: $secondary-overlay-bg;
+  border-radius: 7px;
+  color: white;
+}
+
+.tertiary-overlay-container {
+  background-color: $tertiary-overlay-bg;
+  border-radius: 5px;
+  color: white;
+  margin: 10px;
+}
+
+.border-dark {
+  border-color: #4e4e4e
+}
+
+.border-transparent {
+  border-color: transparent;
+}

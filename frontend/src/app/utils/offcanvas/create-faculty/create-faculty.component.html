@@ -1,0 +1,66 @@
+<div class="offcanvas-header">
+  <h5 class="offcanvas-title">Create a new faculty</h5>
+  <button class="btn btn-dark text-reset" aria-label="Close" (click)="activeOffcanvas.dismiss('Cross click')" type="button"><i class="bi bi-x-lg"></i></button>
+</div>
+<div class="offcanvas-body">
+<div class="container-fluid">
+  <div class="row" style="height: 30px"></div>
+
+
+  <!-- EDIT SECTION -->
+  <ng-container *ngIf="!loading && !showSuccess">
+    <form [formGroup]="formGroup" (ngSubmit)="create()">
+      <div class="row justify-content-center form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text text-light bg-dark border-dark" id="name">Name of the faculty</span>
+          </div>
+          <input type="text" class="form-control text-light bg-dark border-dark" placeholder="Math-Informatics" aria-label="name" aria-describedby="name"
+                 formControlName="name">
+        </div>
+      </div>
+      <div class="row justify-content-center form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text text-light bg-dark border-dark" id="nameShort">Name (short)</span>
+          </div>
+          <input type="text" class="form-control text-light bg-dark border-dark" placeholder="MI" aria-label="nameShort" aria-describedby="nameShort"
+                 formControlName="nameShort">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-5 text-center">
+          <button type="submit" (click)="create()" [disabled]="!formGroup.valid" class="btn btn-success">Create</button>
+        </div>
+      </div>
+    </form>
+    <div class="row" style="height: 30px"></div>
+    <div class="row justify-content-center" *ngIf="showError">
+      <div class="col-9 text-center">
+        {{errorMessage}}
+      </div>
+    </div>
+  </ng-container>
+  <!-- EDIT SECTION -->
+
+
+  <ng-container *ngIf="showSuccess">
+    <div class="row justify-content-center">
+      <div class="col-8 text-center">
+        <i style="color: green; font-size: 35px" class="bi bi-check-circle"></i>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-8 text-center">
+        <p style="color: white; font-size: large">Successfully created the new faculty.</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-8 text-center">
+        <button class="btn btn-success" (click)="activeOffcanvas.close('successfully created')">Close</button>
+      </div>
+    </div>
+  </ng-container>
+  <div class="row" style="height: 30px"></div>
+</div>
+</div>

@@ -1,0 +1,6 @@
+export enum AudioMediumType {
+    NONE = 'NONE',
+    SPEAKERS = 'SPEAKERS',
+    MICROPHONE = 'MICROPHONE',
+    SPEAKERS_MICROPHONE = 'SPEAKERS_MICROPHONE'
+}
